@@ -1,0 +1,29 @@
+/*
+ *    Project:	localhost - localhost
+ *    Version:	1.0.0
+ *    Date:		2014-9-4 22:40:02
+ *    Author:	xp 
+ *
+ *    Coded with Netbeans!
+ */
+
+#| --- Page Config ------------------------------------------------------------------------------------ |#
+
+config.baseURL = {$global.config.base_url.url}
+# realurl
+config.tx_realurl_enable = 1
+#config.compressCss = 1
+#config.compressJs = 1
+
+config.htmlTag_setParams = class="de"
+config.headerComment (
+Just test it
+)
+
+config {
+    uniqueLinkVars = 1
+    sys_language_uid = 0
+    language = de
+    locale_all = de_DE
+    meaningfulTempFilePrefix = 64
+}

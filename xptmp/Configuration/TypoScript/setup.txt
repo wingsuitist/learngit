@@ -1,0 +1,52 @@
+/*
+ *    Project:	localhost - localhost
+ *    Version:	1.0.0
+ *    Date:		2014-9-1 7:13:44
+ *    Author:	xp 
+ *
+ *    Coded with Netbeans!
+ */
+
+#| --- Plugin ----------------------------------------------------------------------------------------- |#
+plugin.tx_xptmp {
+    view {
+        templateRootPath = {$plugin.tx_xptmp.view.templateRootPath}
+        partialRootPath = {$plugin.tx_xptmp.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_xptmp.view.layoutRootPath}
+    }
+}
+
+page = PAGE
+
+#| --- System & Page Config --------------------------------------------------------------------------- |#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:xptmp/Configuration/TypoScript/config.txt">
+#| --- HeaderData ---|
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:xptmp/Configuration/TypoScript/headerData.txt">
+
+
+
+#| --- Fluid Template --------------------------------------------------------------------------------------- |#
+page.10 = FLUIDTEMPLATE
+page.10 {
+    
+    file = {$plugin.tx_xptmp.view.templateRootPath}Default.html
+    layoutRootPath = {$plugin.tx_xptmp.view.layoutRootPath}
+    partialRootPath = {$plugin.tx_xptmp.view.partialRootPath}
+
+    variables {
+        header = TEXT
+        header.value = header text
+        
+        footer = TEXT
+        footer.value = footer text
+    }
+}
+
+#lib.slider = TEXT
+#lib.slider.value = This is Slider Container
+#lib.slider.wrap = <div class="slider">|</div>
+
+lib.content < styles.content.get
+
+tt_content.stdWrap.innerWrap.cObject.default.20.10.value = csc-default row
+#lib.content.wrap = <div class="mainContainer">|</div>

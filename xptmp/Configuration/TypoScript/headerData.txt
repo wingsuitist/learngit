@@ -1,0 +1,80 @@
+/*
+ *    Project:	localhost - localhost
+ *    Version:	1.0.0
+ *    Date:		2014-9-4 23:11:23
+ *    Author:	xp 
+ *
+ *    Coded with Netbeans!
+ */
+
+page {
+    config {
+        doctype = html5
+        disableImgBorderAttr = 1
+        disablePrefixComment = 1
+        htmlTag_langKey = de-DE 
+        meta.language = de
+        spamProtectEmailAddresses = 2
+        spamProtectEmailAddresses_atSubst = (at)
+        spamProtectEmailAddresses_lastDotSubst = (dot) 
+        pageTitleFirst = 1
+        removeDefaultJS = 1
+        removeDefaultCss = 1
+        inlineStyle2TempFile = 1
+    }
+
+
+	#| --- Header & Body ---------------------------------------------------------------------------------- |#
+    meta { 
+        keywords.field = keywords
+        keywords.ifEmpty ( 
+            {$global.config.base_meta.keys}
+        )
+        description.field = description
+        description.ifEmpty ( 
+            {$global.config.base_meta.desc}
+        )
+        FLAGS.DC = 0
+        robots = 
+        author = 
+        revisited-after = 14 
+        audience = 
+        page-topic = 
+        MSSmartTagsPreventParsing = true
+        imagetoolbar  = false
+        
+        # responsive
+        viewport = width=device-width, initial-scale=1.0
+    }
+    includeCSS {
+        bootstrap = EXT:xptmp/Resources/Public/Css/bootstrap.min.css
+        mobil	= fileadmin/
+        print	= fileadmin/
+        print.media = print
+    }
+    includeJS { 
+        jQuery = fileadmin/
+    }
+    includeJSFooter {
+        jquery = EXT:xptmp/Resources/Public/Js/jquery-1.11.1.min.js
+        bootstrap = EXT:xptmp/Resources/Public/Js/bootstrap.min.js
+    }
+}
+
+# get the page img_resource as temp object
+temp.pageFile = IMG_RESOURCE
+temp.pageFile {
+  file {
+    import.data = levelfield : -1, media, slide
+    treatIdAsReference = 1
+    import.listNum = 0 
+  }
+}
+
+# add page img_resource as body background
+page.bodyTag >
+page.bodyTagCObject = COA
+page.bodyTagCObject {
+10 < temp.pageFile
+  wrap = <body class="body-container" style="position:relative;background:url(|);">
+}

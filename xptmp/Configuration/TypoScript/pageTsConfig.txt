@@ -1,0 +1,42 @@
+/**
+ *  page TS config
+ *  Xiaoling Peng
+ */
+
+TCEFORM.pages {
+
+  # Layout
+  layout {
+    # change label name
+    altLabels.0 = peng
+    altLabels.1 = zhou
+    altLabels.2 = wu
+    altLabels.3 = zheng
+//LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tceform.pages.layout.0
+  }
+
+  # Backend layout
+  backend_layout {
+    # not working in 6.2.2 (always all shown)
+    # storagepage of backend layouts
+    PAGE_TSCONFIG_ID = 1
+    # hide no backend layout label
+    //removeItems = -1
+    # instead of empty label
+    //altLabels.0 = xiaoling
+    //altLabels.1 = shaoling
+//LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tceform.pages.belayout.0
+  }
+
+  # Backend layout subpages
+  backend_layout_next_level {
+    # not working in 6.2.2 (always all shown)
+    //PAGE_TSCONFIG_ID = 2
+    //removeItems = -1
+    //altLabels.0 = pengmaradi
+//LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tceform.pages.belayoutnext.0
+  }
+
+  //TSconfig.config.cols = 50
+
+}
