@@ -1,0 +1,45 @@
+{
+    "modules": [
+
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "It creats the base template in Fluid for the TYPO3, just include the typoscript",
+        "emConf": {
+            "category": "templates",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "stable",
+            "targetVersion": "6.2",
+            "version": "0.0.1"
+        },
+        "extensionKey": "xptmp",
+        "name": "xp Fluid Template",
+        "originalExtensionKey": "",
+        "persons": [
+            {
+                "company": "pm",
+                "email": "pengmaradi@gmail.com",
+                "name": "Xiaoling Peng",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+
+        ],
+        "vendorName": "Xp"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2014-09-07 03:34",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (2)"
+    }
+}
